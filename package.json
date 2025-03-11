@@ -1,0 +1,63 @@
+{
+    "name": "isvaliduuid",
+    "version": "1.0.0",
+    "description": "Validate a UUID using `isValidUUID`. Professional, atomic, perfect.",
+    "exports": {
+        "import": "./src/index.js",
+        "require": "./gen/index.cjs"
+    },
+    "type": "module",
+    "files": [
+        "./src/",
+        "./gen"
+    ],
+    "main": "./gen/index.cjs",
+    "scripts": {
+        "test": "vitest",
+        "tsify": "npx tsc --declaration --emitDeclarationOnly --outFile index.d.ts",
+        "preamble": "preamble --apply --dir ./src/",
+        "zord": "filezord --zord --dir ./ --id pkg:isvaliduuid",
+        "pretty": "npx prettier --write .",
+        "lint": "eslint ./src/",
+        "lint:fix": "eslint --fix ./src/",
+        "build": "npm run preamble && npm run pretty && npm run lint:fix && npm run tsify && node build.js && preamble --apply --dir ./gen/  && npm run zord"
+    },
+    "license": "Apache-2.0",
+    "author": {
+        "name": "Alex Stevovich",
+        "email": "alex.stevovich@gmail.com",
+        "url": "https://alexstevovich.com"
+    },
+    "keywords": [
+        "uuid",
+        "uuid-validation",
+        "validate-uuid",
+        "uuid-check",
+        "uuid-validator",
+        "uuid-format",
+        "rfc4122",
+        "crypto",
+        "uuidv4",
+        "uuidv1",
+        "uuidv5",
+        "uuidv3",
+        "nodejs",
+        "javascript",
+        "typescript",
+        "validation",
+        "identifier"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alexstevovich/isvaliduuid.git"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.22.0",
+        "eslint": "^9.21.0",
+        "eslint-plugin-prettier": "^5.2.3",
+        "markdownlint": "^0.37.4",
+        "markdownlint-cli": "^0.44.0",
+        "prettier": "^3.5.3",
+        "vitest": "^3.0.8"
+    }
+}
