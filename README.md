@@ -1,6 +1,8 @@
 # isValidUUID
 
-The **NEW** super atomic `isValidUUID` is finally here—the missing piece often needed alongside the default crypto library.
+> **Archetype:** Node.js package
+
+**isvaliduuid** validates a UUID. Professional, minimal and atomic. The missing piece often needed alongside the default crypto library.
 
 ## Features
 

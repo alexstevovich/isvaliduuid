@@ -1,12 +1,13 @@
 {
     "name": "isvaliduuid",
     "version": "1.0.0",
-    "description": "Validate a UUID using `isValidUUID`. Professional, atomic, perfect.",
+    "description": "Validates a UUID. Pure, atomic, minimal.",
     "exports": {
         "import": "./src/index.js",
         "require": "./gen/index.cjs"
     },
     "type": "module",
+    "types": "./index.d.ts",
     "files": [
         "./src/",
         "./gen"
@@ -14,13 +15,12 @@
     "main": "./gen/index.cjs",
     "scripts": {
         "test": "vitest",
-        "tsify": "npx tsc --declaration --emitDeclarationOnly --outFile index.d.ts",
         "preamble": "preamble --apply --dir ./src/",
         "zord": "filezord --zord --dir ./ --id pkg:isvaliduuid",
         "pretty": "npx prettier --write .",
         "lint": "eslint ./src/",
         "lint:fix": "eslint --fix ./src/",
-        "build": "npm run preamble && npm run pretty && npm run lint:fix && npm run tsify && node build.js && preamble --apply --dir ./gen/  && npm run zord"
+        "build": "npm run preamble && npm run pretty && npm run lint:fix && node build.js && preamble --apply --dir ./gen/  && npm run zord"
     },
     "license": "Apache-2.0",
     "author": {
